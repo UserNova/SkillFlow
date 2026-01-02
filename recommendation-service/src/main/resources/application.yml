@@ -1,0 +1,24 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: recommendation-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+services:
+  evaluationBaseUrl: http://localhost:8888
+  activityBaseUrl: http://localhost:8888
+  authBaseUrl: http://localhost:8888
+
+rest:
+  connect-timeout-ms: 4000
+  read-timeout-ms: 6000

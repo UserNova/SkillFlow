@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  eureka:
+    build: ./eureka-service
+    container_name: eureka-service
+    ports:
+      - "8761:8761"
+
+  gateway:
+    build: ./gateway-service
+    container_name: gateway-service
+    ports:
+      - "8888:8888"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    depends_on:
+      - eureka
+
+  auth:
+    build: ./auth-service
+    container_name: auth-service
+    ports:
+      - "8087:8087"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    depends_on:
+      - eureka
+
+  competence:
+    build: ./competence-service
+    container_name: competence-service
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    depends_on:
+      - eureka
+
+  activities:
+    build: ./activities-service
+    container_name: activites-service
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    depends_on:
+      - eureka
+
+  evaluation:
+    build: ./evaluation-service
+    container_name: evaluation-service
+    ports:
+      - "8083:8083"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    depends_on:
+      - eureka
+
+  graphe:
+    build: ./graphe-service
+    container_name: graphe-service
+    ports:
+      - "8084:8084"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
+    depends_on:
+      - eureka
+      - auth
+      - activities
+      - evaluation

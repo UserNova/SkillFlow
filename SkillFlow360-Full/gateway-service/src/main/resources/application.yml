@@ -1,0 +1,95 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: competences
+          uri: lb://competence-service
+          predicates:
+            - Path=/api/v1/competences/**
+
+        - id: levels
+          uri: lb://competence-service
+          predicates:
+            - Path=/api/v1/levels/**
+
+        - id: resources
+          uri: lb://competence-service
+          predicates:
+            - Path=/api/v1/resources/**
+
+        - id: prerequisites
+          uri: lb://competence-service
+          predicates:
+            - Path=/api/v1/prerequisites/**
+
+        - id: subcompetences
+          uri: lb://competence-service
+          predicates:
+            - Path=/api/v1/subcompetences/**
+
+        - id: auth-service
+          uri: http://localhost:8087
+          predicates:
+            - Path=/auth/**
+
+        - id: activities
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/activities/**
+
+
+        - id: evaluations
+          uri: lb://evaluation-service
+          predicates:
+            - Path=/api/v1/evaluations/**
+
+        - id: submissions
+          uri: lb://evaluation-service
+          predicates:
+            - Path=/api/v1/submissions,/api/v1/submissions/**
+
+
+        - id: analytics
+          uri: lb://graphe-service
+          predicates:
+            - Path=/api/v1/graphes/**
+
+
+        - id: recommendations
+          uri: lb://recommendation-service
+          predicates:
+            - Path=/api/v1/recommendations,/api/v1/recommendations/**
+
+      globalcors:
+        corsConfigurations:
+          "[/**]":
+            allowedOrigins:
+              - "http://localhost:5173"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
