@@ -182,9 +182,9 @@ Ce projet est réalisé dans le cadre d’un Master en Technologies Emergentes, 
 - d’un moteur de recommandation pédagogique basé sur des règles
 
 ### Démonstration Video : 
-Lien vers la vidéo de démonstration de l'application :
+Lien vers la vidéo de démonstration de l'application sur Youtube :
 
-
+https://www.youtube.com/watch?v=559mjWNWrEQ
 
 ### Auteurs / Encadrement : 
 - Nom : Rania ZHIRI et Majeda BEN-LAGHFIRI 
