@@ -108,19 +108,6 @@ services:
       - skillflow-net
     restart: unless-stopped
 
-  recommendation:
-    build: ./recommendation-service
-    container_name: recommendation-service
-    ports:
-      - "8085:8085"
-    environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka
-    depends_on:
-      - eureka
-      - evaluation
-      - activities
-
-
 networks:
   skillflow-net:
     driver: bridge
