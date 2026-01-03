@@ -8,6 +8,7 @@
 - activites-service : 8082
 - evaluation-service : 8083
 - graphe-service : 8084
+- recommendation-service : 8086
 
 ![WhatsApp Image 2026-01-03 at 12 55 32 PM](https://github.com/user-attachments/assets/ff9714d6-e5ef-461c-a051-2210ef1e395e)
 
@@ -145,6 +146,7 @@ Fournir des recommandations personnalisées aux étudiants sans utiliser de Mach
 - Postman
 - Maven
 - Git / GitHub
+- Docker
 
 #### Communication entre microservices :
 - REST APIs
@@ -188,4 +190,4 @@ Lien vers la vidéo de démonstration de l'application :
 - Nom : Rania ZHIRI et Majeda BEN-LAGHFIRI 
 - Encadrant : Mohamed Lachgar
 - Établissement : École Normale Supérieure de Marrakech
-- Module : D
+- Module : Architecture Microservices : Conception, Déploiement et Orchestration
