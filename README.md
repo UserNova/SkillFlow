@@ -40,7 +40,7 @@ Le système vise à améliorer l’apprentissage personnalisé et à aider les e
 | Graphe & Analyse | Visualisation des compétences, progression et dépendances |
 
 
-#### Authentication Microservice : 
+#### - Authentication Microservice : 
 ##### Rôle :
 - Authentification des utilisateurs
 - Gestion des rôles ADMIN (Professeur) et STUDENT
@@ -53,7 +53,7 @@ Le système vise à améliorer l’apprentissage personnalisé et à aider les e
 - Protection des microservices
 
 
-#### Competence Microservice :
+#### - Competence Microservice :
 ##### Rôle :
 - Gérer les compétences
 - Gérer les sous-compétences
@@ -65,7 +65,7 @@ Le système vise à améliorer l’apprentissage personnalisé et à aider les e
 - Liaison avec les activités
 
 
-#### Activities Microservice : 
+#### - Activities Microservice : 
 ##### Rôle : 
 - Gérer les activités pédagogiques
 
@@ -80,7 +80,7 @@ Le système vise à améliorer l’apprentissage personnalisé et à aider les e
 - Gestion des ressources (PDF, vidéo, liens)
 
 
-#### Evaluation Microservice : 
+#### - Evaluation Microservice : 
 ##### Rôle :
 - Gérer les évaluations des étudiants
 
@@ -97,7 +97,7 @@ Le système vise à améliorer l’apprentissage personnalisé et à aider les e
 - Professeur : crée les évaluations et consulte les résultats
 - Étudiant : passe les évaluations et consulte ses scores
 
-#### Recommendation Microservice (Rule-Based) :
+#### - Recommendation Microservice (Rule-Based) :
 ##### Objectif :
 Fournir des recommandations personnalisées aux étudiants sans utiliser de Machine Learning, mais à travers des règles métier explicites.
 
@@ -114,7 +114,7 @@ Fournir des recommandations personnalisées aux étudiants sans utiliser de Mach
 - Proposer des activités non encore complétées
 - Valoriser les activités populaires
 
-#### Graph & Analysis Microservice :
+#### - Graph & Analysis Microservice :
 ##### Rôle :
 - Visualiser les performances
 - Analyser la progression des étudiants
